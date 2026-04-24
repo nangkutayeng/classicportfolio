@@ -1,0 +1,202 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: center;
+}
+
+/* Visual */
+.about__visual {}
+
+.about__img-wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.about__img-placeholder {
+  width: 380px;
+  height: 460px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.about__img-circles {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__circle {
+  position: absolute;
+  border-radius: 50%;
+}
+.about__circle--1 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+}
+.about__circle--2 {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%);
+}
+.about__circle--3 {
+  width: 380px; height: 380px;
+  bottom: -100px; right: -100px;
+  background: radial-gradient(circle, rgba(100,150,255,0.06) 0%, transparent 70%);
+}
+
+.about__monogram {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  color: var(--accent);
+  opacity: 0.5;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 60px rgba(201,169,110,0.4);
+}
+
+/* Experience Badge */
+.about__exp-badge {
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-radius: 20px;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(201,169,110,0.35);
+}
+
+.about__exp-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.about__exp-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-top: 4px;
+  line-height: 1.3;
+}
+
+/* Decoration dot pattern */
+.about__img-deco {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 120px;
+  height: 120px;
+  background-image: radial-gradient(circle, var(--accent) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.3;
+  border-radius: 8px;
+}
+
+/* Content */
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about__title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.about__lead {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.about__body {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.about__ctas {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* Highlights */
+.about__highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.about__highlight-card {
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: border-color var(--transition-fast), transform 0.25s var(--ease-spring), box-shadow var(--transition-fast);
+  cursor: default;
+}
+
+.about__highlight-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.about__highlight-icon {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.about__highlight-title {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.about__highlight-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .about__grid { grid-template-columns: 1fr; gap: 60px; }
+  .about__img-placeholder { width: 100%; max-width: 380px; height: 320px; }
+  .about__img-wrapper { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .about__highlights { grid-template-columns: 1fr; }
+  .about__img-placeholder { height: 260px; }
+}

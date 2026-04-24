@@ -1,0 +1,104 @@
+/* ===== APP LAYOUT ===== */
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ===== CUSTOM CURSOR (desktop only) ===== */
+@media (pointer: fine) {
+  * { cursor: none !important; }
+
+  .cursor {
+    position: fixed;
+    top: 0; left: 0;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid var(--accent);
+    pointer-events: none;
+    z-index: 99999;
+    margin-left: -18px;
+    margin-top: -18px;
+    transition:
+      width 0.3s var(--ease-smooth),
+      height 0.3s var(--ease-smooth),
+      border-color 0.3s,
+      background 0.3s,
+      opacity 0.3s;
+    mix-blend-mode: normal;
+  }
+
+  .cursor--hover {
+    width: 56px;
+    height: 56px;
+    margin-left: -28px;
+    margin-top: -28px;
+    background: var(--accent-light);
+    border-color: var(--accent);
+  }
+
+  .cursor--click {
+    width: 28px;
+    height: 28px;
+    margin-left: -14px;
+    margin-top: -14px;
+    background: var(--accent-light);
+  }
+
+  .cursor-dot {
+    position: fixed;
+    top: 0; left: 0;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    pointer-events: none;
+    z-index: 100000;
+    margin-left: -2.5px;
+    margin-top: -2.5px;
+    transition: transform 0.05s linear;
+  }
+}
+
+/* ===== BACK TO TOP BUTTON ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 500;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-strong);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.35s var(--ease-smooth),
+    transform 0.35s var(--ease-spring),
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast);
+  pointer-events: none;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+  transform: translateY(-4px);
+}
+
+@media (max-width: 480px) {
+  .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+}
